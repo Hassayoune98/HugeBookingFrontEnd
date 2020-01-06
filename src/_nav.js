@@ -8,7 +8,7 @@ export default {
         variant: 'info',
         text: 'NEW',
       },
-    },
+    }/*,
     {
       title: true,
       name: 'Theme',
@@ -275,6 +275,6 @@ export default {
       icon: 'icon-layers',
       variant: 'danger',
       attributes: { target: '_blank', rel: "noopener" },
-    },
+    },*/
   ],
 };
