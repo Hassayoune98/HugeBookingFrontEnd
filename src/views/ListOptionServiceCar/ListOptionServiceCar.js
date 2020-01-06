@@ -9,7 +9,7 @@ import {withRouter} from 'react-router-dom'
 //import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import toast from 'toasted-notes' 
 import 'toasted-notes/src/styles.css';
-class ListLocationCarService extends Component {
+class ListOptionServiceCar extends Component {
 
   constructor()
   {
@@ -20,14 +20,14 @@ class ListLocationCarService extends Component {
 }
     componentDidMount()
   {
-      axios.get('http://localhost:4000/service/getServiceByType',{
-      headers: {"type":"Location Voiture"} 
+      axios.get('http://localhost:4000/service/getOptionServiceVoitureById',{
+      headers: {"idservice":"5e12fdf9ca8e8c0648158ec3"} 
   }).then(res => {
-      console.log('done',res)
+      console.log('done',res.data.service.voitureOption)
       this.setState({
-       posts: res.data.services
+       posts: res.data.service.voitureOption
       });
-      console.log("posts ", this.state.posts)
+     // console.log("posts ", this.state.posts)
     }).catch(e => {
       toast.notify("something went wrong please refresh ", {
         duration: 2000
@@ -40,8 +40,8 @@ class ListLocationCarService extends Component {
 gotoDetails()
 {
   this.props.history.push({
-    pathname:'/project/project-details',
-    state: {idservice:'this.state.idservice'}
+   // pathname:'/project/project-details',
+   // state: {projectId:'this.state.ProjectId'}
   })
 }
 render() {
@@ -50,19 +50,29 @@ render() {
     let data = {
           columns: [
             {
-              label: "Service Name  ",
-              field: "ServiceName",
+              label: "Name",
+              field: "Name",
               sort: "asc",
               width: 10
             },
             {
-              label: "Address",
-              field: "Address",
+              label: "Model",
+              field: "Model",
               width: 50
             } ,
-             {
-              label: "Phone Number",
-              field: "PhoneNumber",
+            {
+              label: "Status",
+              field: "Status",
+              width: 50
+            },
+            {
+              label: "Price",
+              field: "Price",
+              width: 50
+            },
+            {
+              label: "Disponibility",
+              field: "Disponibility",
               width: 50
             },
             {
@@ -79,16 +89,18 @@ render() {
       
             this.state.posts.map(service => 
               data.rows.push({
-                ServiceName: service.name,
-                Address: service.address,
-                PhoneNumber: service.phoneNumber, 
-             Actions: (
+                Name: service.name,
+                Model: service.model,
+                Status: service.status,
+                Price: service.price,
+                Disponibility: service.disponibility
+             /*Actions: (
               <ButtonGroup aria-label="Basic example">
-             <Link to={`/ListLocation/ListLocationCarService/details/${service._id}`}>
-                 <Button block outline color="primary" onClick={this.gotoDetails.bind(this)}>Details </Button>
-             </Link>     
+             <Link to={``} >
+            <Button block outline color="primary" onClick={this.gotoDetails.bind(this)}>Details</Button>
+            </Link>     
              </ButtonGroup>
-             )
+             )*/
               })
             );
           }
@@ -99,9 +111,9 @@ render() {
           <Card>
             <CardHeader>
               <Route>
-              <i className="fa fa-align-justify"></i> Location Car Table
+              <i className="fa fa-align-justify"></i> List of Cars
               <Col col="6" sm="4" md="2" xs className="mb-3 mb-xs-0">
-              <Link to ="/project/project-create/"><Button block color="primary" className="btn-pill">New Service</Button></Link>      
+              <Link to ="/project/project-create/"><Button block color="primary" className="btn-pill">New Car</Button></Link>      
              
             </Col>
             </Route>
@@ -119,4 +131,4 @@ render() {
     )
 }}
 
-export default withRouter(ListLocationCarService);
+export default withRouter(ListOptionServiceCar);
