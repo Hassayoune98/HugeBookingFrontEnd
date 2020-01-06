@@ -1,0 +1,6 @@
+{
+  "name": "ListLocationCarService",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ListLocationCarService.js"
+}
