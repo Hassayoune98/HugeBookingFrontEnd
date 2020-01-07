@@ -15,7 +15,11 @@ export default {
       name: 'List Car Location',
       url: '/ListLocation/ListLocationCarService'
       }]
-    }
+    },  {
+      name: 'Create Service',
+      url: '/Service/Create',
+      icon: 'icon-drop',
+    },
     
     /*,
     {

@@ -37,13 +37,7 @@ class ListLocationCarService extends Component {
 
 
 
-gotoDetails()
-{
-  this.props.history.push({
-    pathname:'/project/project-details',
-    state: {idservice:'this.state.idservice'}
-  })
-}
+
 render() {
    //if (this.state.posts)
    //           return null 
@@ -85,7 +79,7 @@ render() {
              Actions: (
               <ButtonGroup aria-label="Basic example">
              <Link to={`/ListLocation/ListLocationCarService/details/${service._id}`}>
-                 <Button block outline color="primary" onClick={this.gotoDetails.bind(this)}>Details </Button>
+                 <Button block outline color="primary" >Details </Button>
              </Link>     
              </ButtonGroup>
              )
@@ -100,10 +94,7 @@ render() {
             <CardHeader>
               <Route>
               <i className="fa fa-align-justify"></i> Location Car Table
-              <Col col="6" sm="4" md="2" xs className="mb-3 mb-xs-0">
-              <Link to ="/project/project-create/"><Button block color="primary" className="btn-pill">New Service</Button></Link>      
              
-            </Col>
             </Route>
          
             </CardHeader>
