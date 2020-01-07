@@ -21,9 +21,9 @@ class ListOptionServiceCar extends Component {
     componentDidMount()
   {
       axios.get('http://localhost:4000/service/getOptionServiceVoitureById',{
-      headers: {"idservice":"5e12fdf9ca8e8c0648158ec3"} 
+      headers: {"idservice":this.props.match.params.idservice} 
   }).then(res => {
-      console.log('done',res.data.service.voitureOption)
+      console.log('done',res.data.service)
       this.setState({
        posts: res.data.service.voitureOption
       });
@@ -113,7 +113,7 @@ render() {
               <Route>
               <i className="fa fa-align-justify"></i> List of Cars
               <Col col="6" sm="4" md="2" xs className="mb-3 mb-xs-0">
-              <Link to ="/project/project-create/"><Button block color="primary" className="btn-pill">New Car</Button></Link>      
+              <Link to ={`/ListLocation/ListLocationCarService/details/CarCreate/${this.props.match.params.idservice}`}><Button block color="primary" className="btn-pill">New Car</Button></Link>      
              
             </Col>
             </Route>

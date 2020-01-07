@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels'));
@@ -37,6 +38,7 @@ const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
 const ListLocationCarService = React.lazy(() => import('./views/ListLocationCarService/ListLocationCarService'));
 const ListOptionServiceCar = React.lazy(() => import('./views/ListOptionServiceCar/ListOptionServiceCar'));
+const CarCreate = React.lazy(() => import('./views/CarCreate/CarCreate'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -82,6 +84,7 @@ const routes = [
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/ListLocation/ListLocationCarService', exact: true,  name: 'ListLocationCarService', component: ListLocationCarService },
   { path: '/ListLocation/ListLocationCarService/details/:idservice', exact: true,  name: 'ListOptionServiceCar', component: ListOptionServiceCar },
+  { path: '/ListLocation/ListLocationCarService/details/CarCreate/:idservice', exact: true,  name: 'CarCreate', component: CarCreate },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ];
 
