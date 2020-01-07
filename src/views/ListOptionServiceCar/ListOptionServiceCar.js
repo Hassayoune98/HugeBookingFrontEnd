@@ -93,14 +93,14 @@ render() {
                 Model: service.model,
                 Status: service.status,
                 Price: service.price,
-                Disponibility: service.disponibility
-             /*Actions: (
+                Disponibility: service.disponibility,
+             Actions: (
               <ButtonGroup aria-label="Basic example">
-             <Link to={``} >
-            <Button block outline color="primary" onClick={this.gotoDetails.bind(this)}>Details</Button>
+             <Link to={`/ListLocation/ListLocationCarService/details/CarDetails/${service._id}`} >
+            <Button block outline color="primary" >Details</Button>
             </Link>     
              </ButtonGroup>
-             )*/
+             )
               })
             );
           }
