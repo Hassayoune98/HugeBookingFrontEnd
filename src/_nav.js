@@ -14,7 +14,13 @@ export default {
       children: [{
       name: 'List Car Location',
       url: '/ListLocation/ListLocationCarService'
-      }]
+      },
+      {
+        name: 'List Hotel',
+        url: '/ListHotel/ListHotelService',
+        icon: 'icon-home'
+        }
+    ]
     },  {
       name: 'Create Service',
       url: '/Service/Create',

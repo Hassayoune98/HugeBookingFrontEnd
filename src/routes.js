@@ -39,8 +39,13 @@ const User = React.lazy(() => import('./views/Users/User'));
 const ListLocationCarService = React.lazy(() => import('./views/ListLocationCarService/ListLocationCarService'));
 const ListOptionServiceCar = React.lazy(() => import('./views/ListOptionServiceCar/ListOptionServiceCar'));
 const CarCreate = React.lazy(() => import('./views/CarCreate/CarCreate'));
-const ServiceCreate = React.lazy(()=> import('./views/ServiceCreate/ServiceCreate'));
-const CarDetails= React.lazy(() => import('./views/CarDetails/CarDetails'));
+const ServiceCreate = React.lazy(() => import('./views/ServiceCreate/ServiceCreate'));
+const CarDetails = React.lazy(() => import('./views/CarDetails/CarDetails'));
+const ListHotelService = React.lazy(() => import('./views/ListHotelService/ListHotelService'));
+const ListOptionServiceRoom = React.lazy(() => import('./views/ListOptionServiceRoom/ListOptionServiceRoom'));
+const RoomCreate = React.lazy(() => import('./views/RoomCreate/RoomCreate'));
+const RoomDetails = React.lazy(() => import('./views/RoomDetails/RoomDetails'));
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -82,12 +87,17 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', component: Modals },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/charts', name: 'Charts', component: Charts },
-  { path: '/users', exact: true,  name: 'Users', component: Users },
-  { path: '/ListLocation/ListLocationCarService', exact: true,  name: 'ListLocationCarService', component: ListLocationCarService },
-  { path: '/Service/Create', exact: true,  name: 'ServiceCreate', component: ServiceCreate },
-  { path: '/ListLocation/ListLocationCarService/details/:idservice', exact: true,  name: 'ListOptionServiceCar', component: ListOptionServiceCar },
-  { path: '/ListLocation/ListLocationCarService/details/CarCreate/:idservice', exact: true,  name: 'CarCreate', component: CarCreate },
-  { path: '/ListLocation/ListLocationCarService/details/CarDetails/:idcar', exact: true, name: 'CarDetails', component: CarDetails},
+  { path: '/users', exact: true, name: 'Users', component: Users },
+  { path: '/ListLocation/ListLocationCarService', exact: true, name: 'ListLocationCarService', component: ListLocationCarService },
+  { path: '/Service/Create', exact: true, name: 'ServiceCreate', component: ServiceCreate },
+  { path: '/ListLocation/ListLocationCarService/details/:idservice', exact: true, name: 'ListOptionServiceCar', component: ListOptionServiceCar },
+  { path: '/ListLocation/ListLocationCarService/details/CarCreate/:idservice', exact: true, name: 'CarCreate', component: CarCreate },
+  { path: '/ListLocation/ListLocationCarService/details/CarDetails/:idcar', exact: true, name: 'CarDetails', component: CarDetails },
+  //Hotel Service Routes
+  { path: '/ListHotel/ListHotelService', exact: true, name: 'ListHotelService', component: ListHotelService },
+  { path: '/ListHotel/ListHotelService/details/:idservice', exact: true, name: 'ListOptionServiceRoom', component: ListOptionServiceRoom },
+  { path: '/ListHotel/ListHotelService/details/RoomCreate/:idservice', exact: true, name: 'RoomCreate', component: RoomCreate },
+  { path: '/ListHotel/ListHotelService/details/RoomDetails/:idroom', exact: true, name: 'RoomDetails', component: RoomDetails },
 
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ];
