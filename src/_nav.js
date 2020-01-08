@@ -11,14 +11,21 @@ export default {
     },
     {
       name: 'List Services',
+      icon: 'icon-list',
       children: [{
       name: 'List Car Location',
+      icon: 'fa fa-car',
       url: '/ListLocation/ListLocationCarService'
       }]
     },  {
       name: 'Create Service',
       url: '/Service/Create',
-      icon: 'icon-drop',
+      icon: 'fa fa-gear',
+    },
+    {
+      name: 'Calendar',
+      url: '/calendarEv',
+      icon: 'icon-calendar',
     },
     
     /*,
