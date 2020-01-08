@@ -48,6 +48,10 @@ export function register(config) {
         // Is not local host. Just register service worker
         registerValidSW(swUrl, config);
       }
+    });window.addEventListener('fetch', (event) => {
+      if ( event.request.url.match( '^.*(\/api\/).*$' ) ) {
+        return false;
+      }
     });
   }
 }

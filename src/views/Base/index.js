@@ -12,11 +12,12 @@ import Popovers from './Popovers';
 import Paginations from './Paginations';
 import ProgressBar from './ProgressBar';
 import Switches from './Switches';
-import Tables from './Tables';
+import Client from './Tables/User';
+import Service from './Tables/Service';
 import Tabs from './Tabs';
 import Tooltips from './Tooltips';
 
 export {
-  Breadcrumbs, Cards, Carousels, Collapses, Dropdowns, Forms, Jumbotrons, ListGroups, Navbars, Navs, Popovers, ProgressBar, Switches, Tables, Tabs, Tooltips, Paginations
+  Breadcrumbs, Cards, Carousels, Collapses, Dropdowns, Forms, Jumbotrons, ListGroups, Navbars, Navs, Popovers, ProgressBar, Switches, Client,Service,Tabs, Tooltips, Paginations
 };
 

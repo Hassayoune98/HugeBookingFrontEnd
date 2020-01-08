@@ -9,20 +9,7 @@ export default {
         text: 'NEW',
       },
     },
-    {
-      name: 'List Services',
-      children: [{
-      name: 'List Car Location',
-      url: '/ListLocation/ListLocationCarService'
-      }]
-    },  {
-      name: 'Create Service',
-      url: '/Service/Create',
-      icon: 'icon-drop',
-    },
-    
-    /*,
-    {
+   /* {
       title: true,
       name: 'Theme',
       wrapper: {            // optional wrapper object
@@ -30,17 +17,48 @@ export default {
         attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
       },
       class: ''             // optional class names space delimited list for title item ex: "text-center"
+    },*/
+   
+    {
+      name: 'Gérer les utilsateurs',
+      url: '/User',
+      icon: 'fa fa-users',
+      children: [
+        {
+          name: 'Client Particuliers',
+          url: '/User',
+          icon: 'fa fa-table',
+        },
+        {
+          name: 'Client Professionels',
+          url: '/user',
+          icon: 'fa fa-table',
+        },
+        {
+          name: 'Ajouter un client',
+          url:'/user',
+          icon : 'fa fa-plus-circle',
+        }
+       
+      ],
     },
     {
-      name: 'Colors',
-      url: '/theme/colors',
-      icon: 'icon-drop',
-    },
-    {
-      name: 'Typography',
-      url: '/theme/typography',
-      icon: 'icon-pencil',
-    },
+      name: 'Gérer les services',
+      url: '/User',
+      icon: 'fa fa-grav',
+      children:[
+        {
+          name : 'Consulter les services',
+          url:'/Service',
+          icon: 'fa fa-table',
+        },
+        {
+          name: 'Ajouter un service',
+          url:'/Service',
+          icon:'fa fa-plus-circle'
+        }
+      ]
+    },/*
     {
       title: true,
       name: 'Components',

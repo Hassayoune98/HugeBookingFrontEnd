@@ -1,6 +1,6 @@
-import Colors from './Colors';
-import Typography from './Typography';
+import Service from './service';
+import User from './user';
 
 export {
-  Colors, Typography,
+  Service, User,
 };
