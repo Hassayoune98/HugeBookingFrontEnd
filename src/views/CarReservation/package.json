@@ -1,0 +1,7 @@
+{
+    "name": "CarReservation",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./CarReservation.js"
+  }
+  

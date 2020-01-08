@@ -94,18 +94,14 @@ render() {
             <CardHeader>
               <Route>
               <i className="fa fa-align-justify"></i> Location Car Table
-             
             </Route>
-         
             </CardHeader>
             <CardBody>
-    
               <MDBDataTable bordered hover data={data} />
               </CardBody>
               </Card>
               </Col>
               </Row>
-    
         </div>
     )
 }}

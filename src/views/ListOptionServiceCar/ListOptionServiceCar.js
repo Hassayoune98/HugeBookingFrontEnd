@@ -46,62 +46,72 @@ class ListOptionServiceCar extends Component {
     //if (this.state.posts)
     //           return null 
     let data = {
-      columns: [
-        {
-          label: "Name",
-          field: "Name",
-          sort: "asc",
-          width: 10
-        },
-        {
-          label: "Model",
-          field: "Model",
-          width: 50
-        },
-        {
-          label: "Status",
-          field: "Status",
-          width: 50
-        },
-        {
-          label: "Price",
-          field: "Price",
-          width: 50
-        },
-        {
-          label: "Disponibility",
-          field: "Disponibility",
-          width: 50
-        },
-        {
-          label: "Actions",
-          field: "Actions",
-          width: 100
-        }
+          columns: [
+            {
+              label: "Name",
+              field: "Name",
+              sort: "asc",
+              width: 10
+            },
+            {
+              label: "Model",
+              field: "Model",
+              width: 50
+            } ,
+            {
+              label: "Status",
+              field: "Status",
+              width: 50
+            },
+            {
+              label: "Price",
+              field: "Price",
+              width: 50
+            },
+            {
+              label: "Disponibility",
+              field: "Disponibility",
+              width: 50
+            },
+            {
+              label: "Actions",
+              field: "Actions",
+              width: 100
+            }
+           
+          ] /**/,
+          rows: [{}]
+        };
+        if (this.state.posts) 
+          {
+      
+            this.state.posts.map(service => 
+              data.rows.push({
+                Name: service.name,
+                Model: service.model,
+                Status: service.status,
+                Price: service.price,
+                Disponibility: service.disponibility,
+             Actions: (
+              <ButtonGroup aria-label="Basic example">
+             <Link to={`/ListLocation/ListLocationCarService/details/CarDetails/${service._id}`} >
+            <Button block outline color="primary" >Details</Button>
+            </Link>     
 
-      ] /**/,
-      rows: [{}]
-    };
-    if (this.state.posts) {
+            <Link to={`/ListLocation/ListLocationCarService/details/CarReservation/${service._id}`} >
+            <Button block outline color="warning" >Reservation</Button>
+            </Link>     
 
-      this.state.posts.map(service =>
-        data.rows.push({
-          Name: service.name,
-          Model: service.model,
-          Status: service.status,
-          Price: service.price,
-          Disponibility: service.disponibility,
-          Actions: (
-            <ButtonGroup aria-label="Basic example">
-              <Link to={`/ListLocation/ListLocationCarService/details/CarDetails/${service._id}`} >
-                <Button block outline color="primary" >Details</Button>
-              </Link>
-            </ButtonGroup>
-          )
-        })
-      );
-    }
-    return (
+
+             </ButtonGroup>
+             
+             
+             
+             )
+              })
+            );
+          }
+     return (
       <div className="animated fadeIn">
         <Row>
           <Col >
