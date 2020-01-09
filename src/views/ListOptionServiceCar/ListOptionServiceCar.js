@@ -46,72 +46,83 @@ class ListOptionServiceCar extends Component {
     //if (this.state.posts)
     //           return null 
     let data = {
-          columns: [
-            {
-              label: "Name",
-              field: "Name",
-              sort: "asc",
-              width: 10
-            },
-            {
-              label: "Model",
-              field: "Model",
-              width: 50
-            } ,
-            {
-              label: "Status",
-              field: "Status",
-              width: 50
-            },
-            {
-              label: "Price",
-              field: "Price",
-              width: 50
-            },
-            {
-              label: "Disponibility",
-              field: "Disponibility",
-              width: 50
-            },
-            {
-              label: "Actions",
-              field: "Actions",
-              width: 100
-            }
-           
-          ] /**/,
-          rows: [{}]
-        };
-        if (this.state.posts) 
-          {
-      
-            this.state.posts.map(service => 
-              data.rows.push({
-                Name: service.name,
-                Model: service.model,
-                Status: service.status,
-                Price: service.price,
-                Disponibility: service.disponibility,
-             Actions: (
-              <ButtonGroup aria-label="Basic example">
-             <Link to={`/ListLocation/ListLocationCarService/details/CarDetails/${service._id}`} >
-            <Button block outline color="primary" >Details</Button>
-            </Link>     
+      columns: [
+        {
+          label: "Name",
+          field: "Name",
+          sort: "asc",
+          width: 10
+        },
+        {
+          label: "Model",
+          field: "Model",
+          width: 50
+        },
+        {
+          label: "Status",
+          field: "Status",
+          width: 50
+        },
+        {
+          label: "Price",
+          field: "Price",
+          width: 50
+        },
+        {
+          label: "Disponibility",
+          field: "Disponibility",
+          width: 50
+        },
+        {
+          label: "Actions",
+          field: "Actions",
+          width: 100
+        }
 
-            <Link to={`/ListLocation/ListLocationCarService/details/CarReservation/${service._id}`} >
-            <Button block outline color="warning" >Reservation</Button>
-            </Link>     
+      ] /**/,
+      rows: [{}]
+    };
+    if (this.state.posts) {
+
+      this.state.posts.map(service =>
+        data.rows.push({
+          Name: service.name,
+          Model: service.model,
+          Status: service.status,
+          Price: service.price,
+          Disponibility: service.disponibility,
+          Actions: (
+            <ButtonGroup aria-label="Basic example">
+              <Link to={`/ListLocation/ListLocationCarService/details/CarDetails/${service._id}`} >
+                <Button block outline color="primary" >Details</Button>
+              </Link>
+
+              {(() => {
+                switch (service.disponibility) {
+                  case 'True':
+                    return <Link to={`/ListLocation/ListLocationCarService/details/CarReservation/${service._id}`} >
+                      <Button block color="warning">Reservation</Button>
+                    </Link>;
+                  case 'False':
+                    return <Link>
+                      <Button block color="warning" disabled>Reservation</Button>
+                    </Link>;
+                  default:
+                    return null;
+                }
+              })()}
 
 
-             </ButtonGroup>
-             
-             
-             
-             )
-              })
-            );
-          }
-     return (
+
+            </ButtonGroup>
+
+
+
+          )
+        })
+      );
+    }
+    return (
       <div className="animated fadeIn">
         <Row>
           <Col >

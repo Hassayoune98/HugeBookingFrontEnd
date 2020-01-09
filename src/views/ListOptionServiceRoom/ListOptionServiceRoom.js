@@ -89,9 +89,21 @@ class ListOptionServiceRoom extends Component {
                                 <Button block outline color="primary" >Details</Button>
                             </Link>
 
-                            <Link to={`/ListHotel/ListHotelService/details/RoomReservation/${service._id}`} >
-            <Button block outline color="warning" >Reservation</Button>
-            </Link>  
+                            {(() => {
+                                switch (service.disponibility) {
+                                    case 'True':
+                                        return <Link to={`/ListHotel/ListHotelService/details/RoomReservation/${service._id}`} >
+                                            <Button block color="warning">Reservation</Button>
+                                        </Link>;
+                                    case 'False':
+                                        return <Link>
+                                            <Button block color="warning" disabled>Reservation</Button>
+                                        </Link>;
+                                    default:
+                                        return null;
+                                }
+                            })()}
+
                         </ButtonGroup>
                     )
                 })
