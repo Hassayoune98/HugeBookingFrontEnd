@@ -88,6 +88,10 @@ class ListOptionServiceRoom extends Component {
                             <Link to={`/ListHotel/ListHotelService/details/RoomDetails/${service._id}`} >
                                 <Button block outline color="primary" >Details</Button>
                             </Link>
+
+                            <Link to={`/ListHotel/ListHotelService/details/RoomReservation/${service._id}`} >
+            <Button block outline color="warning" >Reservation</Button>
+            </Link>  
                         </ButtonGroup>
                     )
                 })

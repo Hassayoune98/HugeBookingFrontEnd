@@ -47,6 +47,8 @@ const ListHotelService = React.lazy(() => import('./views/ListHotelService/ListH
 const ListOptionServiceRoom = React.lazy(() => import('./views/ListOptionServiceRoom/ListOptionServiceRoom'));
 const RoomCreate = React.lazy(() => import('./views/RoomCreate/RoomCreate'));
 const RoomDetails = React.lazy(() => import('./views/RoomDetails/RoomDetails'));
+const RoomReservation = React.lazy(() => import('./views/RoomReservation/RoomReservation'));
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -96,12 +98,13 @@ const routes = [
   { path: '/ListLocation/ListLocationCarService/details/CarDetails/:idcar', exact: true, name: 'CarDetails', component: CarDetails },
   { path: '/CalendarEv', exact: true, name: 'CalendarEv', component: CalendarEv },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
-  { path: '/ListLocation/ListLocationCarService/details/CarReservation/:idcar', exact: true, bame: 'Car Reservation', component: CarReservation },
+  { path: '/ListLocation/ListLocationCarService/details/CarReservation/:idcar', exact: true, name: 'Car Reservation', component: CarReservation },
   //Hotel Service Routes
   { path: '/ListHotel/ListHotelService', exact: true, name: 'ListHotelService', component: ListHotelService },
   { path: '/ListHotel/ListHotelService/details/:idservice', exact: true, name: 'ListOptionServiceRoom', component: ListOptionServiceRoom },
   { path: '/ListHotel/ListHotelService/details/RoomCreate/:idservice', exact: true, name: 'RoomCreate', component: RoomCreate },
   { path: '/ListHotel/ListHotelService/details/RoomDetails/:idroom', exact: true, name: 'RoomDetails', component: RoomDetails },
+  { path: '/ListHotel/ListHotelService/details/RoomReservation/:idroom', exact: true, name: 'Room Reservation', component: RoomReservation },
 
 ];
 
