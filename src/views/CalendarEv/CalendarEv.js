@@ -31,18 +31,46 @@ constructor(props)
   super(props)
   
   this.state = {
+
+    reservations: [{}],
+    datarecieved: false,
     events: [
       {
-        start: new Date(),
-        end: new Date(moment().add(1, "days")),
-        title: "Some title"
       }
     ]
   };
 
 }
 
+componentDidMount(){
+  axios.get("http://localhost:4000/ReservationService/getReservations").then(e => {
+   
+  this.setState({
+    reservations:e.data.reservation
+  })
 
+ this.state.reservations.map(e => {
+   
+   let reservation = {
+    start:new Date(e.reservation.dateDebutReservation),
+    end: new Date (e.reservation.dateFinReservation),
+    title: e.model + e.name
+   }
+  
+   this.state.events.push(reservation)
+   
+   this.setState({
+    datarecieved:true
+   }) });
+
+   console.log("state")
+
+    console.log("state events", this.state.events)
+    console.log("response ", this.state.reservations)
+    })
+
+  
+}
 
 
 
@@ -63,14 +91,26 @@ render() {
             <Card>
            
               <CardBody>
-              <Calendar
+          
+
+              {this.state.datarecieved ?
+                <Calendar
                      localizer={localizer}
                        defaultDate={new Date()}
-                      defaultView="month"
+                       defaultView="month"
                        events={this.state.events}
                       style={{ height: "100vh" }}
-                     />
-                </CardBody>
+              /> :  <Calendar
+              localizer={localizer}
+                defaultDate={new Date()}
+                defaultView="month"
+                events={this.state.events}
+               style={{ height: "100vh" }}
+       />
+              }
+
+                </CardBody> 
+
                 </Card>
                 </Col>
                 </Row>
